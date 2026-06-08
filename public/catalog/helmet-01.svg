@@ -1,0 +1,19 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1200" rx="72" fill="url(#bg)"/>
+  <circle cx="930" cy="210" r="160" fill="#FFFFFF" fill-opacity="0.18"/>
+  <circle cx="250" cy="980" r="220" fill="#111827" fill-opacity="0.1"/>
+  <ellipse cx="600" cy="910" rx="250" ry="54" fill="#0F172A" fill-opacity="0.18"/>
+  <path d="M332 618C332 470.542 451.542 351 599 351H601C748.458 351 868 470.542 868 618V641H332V618Z" fill="#F9C400"/>
+  <path d="M410 560C410 455.066 495.066 370 600 370C704.934 370 790 455.066 790 560V641H410V560Z" fill="#FFD84D"/>
+  <path d="M314 628H886C903.673 628 918 642.327 918 660V720C918 755.346 889.346 784 854 784H346C310.654 784 282 755.346 282 720V660C282 642.327 296.327 628 314 628Z" fill="#F59E0B"/>
+  <path d="M360 684H840" stroke="#FFF4C2" stroke-width="24" stroke-linecap="round"/>
+  <path d="M454 457H746" stroke="#FFF8D6" stroke-width="18" stroke-linecap="round" stroke-opacity="0.85"/>
+  <path d="M438 785H762" stroke="#78350F" stroke-width="18" stroke-linecap="round" stroke-opacity="0.4"/>
+  <defs>
+    <linearGradient id="bg" x1="140" y1="80" x2="1020" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="0.52" stop-color="#FFE8C6"/>
+      <stop offset="1" stop-color="#FED7AA"/>
+    </linearGradient>
+  </defs>
+</svg>
