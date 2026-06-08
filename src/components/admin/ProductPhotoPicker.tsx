@@ -106,7 +106,7 @@ const ProductPhotoPicker = ({
             ? "Envoi des photos vers Cloudinary..."
             : photos.length > 0 ? "Ajouter d'autres photos" : "Choisir une ou plusieurs photos"}
         </span>
-        <input type="file" accept="image/*" multiple disabled={uploading} className="hidden" onChange={handleFilesChange} />
+        <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple disabled={uploading} className="hidden" onChange={handleFilesChange} />
       </label>
 
       {photos.length > 0 && (

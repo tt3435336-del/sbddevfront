@@ -78,9 +78,9 @@ const Personnalisation = () => {
             <Upload className="h-7 w-7 shrink-0 text-muted-foreground sm:h-8 sm:w-8" />
             <div className="min-w-0">
               <p className="text-sm font-medium">{logo ? logo.name : "Cliquez pour uploader votre logo"}</p>
-              <p className="text-xs text-muted-foreground">PNG, JPG ou SVG (max 5 Mo)</p>
+              <p className="text-xs text-muted-foreground">PNG, JPG ou WebP (max 5 Mo)</p>
             </div>
-            <input type="file" accept="image/*" className="hidden" onChange={(e) => setLogo(e.target.files?.[0] || null)} />
+            <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" className="hidden" onChange={(e) => setLogo(e.target.files?.[0] || null)} />
           </label>
         </div>
 
