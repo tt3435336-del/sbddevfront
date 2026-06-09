@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCart, Menu, X, Search, HardHat } from "lucide-react";
+import { ShoppingCart, Menu, X, Search, HardHat, UserRoundCog } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -65,6 +65,14 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              to="/admin"
+              className="hidden items-center gap-2 rounded-full border border-white/15 px-3 py-2 text-sm font-semibold text-white transition-colors hover:border-primary/60 hover:bg-primary/15 hover:text-primary sm:flex lg:px-3.5 lg:py-2.5"
+              aria-label="Accéder à l’espace admin"
+            >
+              <UserRoundCog className="h-5 w-5" />
+              <span className="hidden xl:inline">Admin</span>
+            </Link>
             <button
               onClick={() => setIsOpen(true)}
               className="relative rounded-full p-2 text-white transition-colors hover:bg-white/10 hover:text-primary lg:p-2.5"
@@ -124,6 +132,15 @@ const Navbar = () => {
                 activeClassName="border-primary/50 bg-primary/15 text-primary"
               >
                 Contact
+              </NavLink>
+              <NavLink
+                to="/admin"
+                onClick={() => setMenuOpen(false)}
+                className="flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-3.5 text-base font-semibold text-primary transition-colors hover:bg-primary/20"
+                activeClassName="border-primary bg-primary/20 text-primary"
+              >
+                <UserRoundCog className="h-5 w-5" />
+                Espace admin
               </NavLink>
             </div>
           </div>
