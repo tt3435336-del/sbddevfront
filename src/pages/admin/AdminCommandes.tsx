@@ -37,7 +37,7 @@ const AdminCommandes = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-card-foreground mb-6">Commandes ({commandes?.length || 0})</h1>
+      <h1 className="mb-4 text-xl font-bold text-card-foreground sm:mb-6 sm:text-2xl">Commandes ({commandes?.length || 0})</h1>
 
       {!commandes?.length ? (
         <div className="bg-card border border-border rounded-xl p-8 text-center text-muted-foreground">
@@ -46,17 +46,17 @@ const AdminCommandes = () => {
       ) : (
         <div className="space-y-4">
           {commandes.map((cmd) => (
-            <div key={cmd.id} className="bg-card border border-border rounded-xl p-5">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
-                <div>
+            <div key={cmd.id} className="rounded-xl border border-border bg-card p-4 sm:p-5">
+              <div className="mb-3 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="min-w-0">
                   <h3 className="font-bold text-card-foreground">{cmd.nom_complet}</h3>
-                  <p className="text-sm text-muted-foreground">{cmd.telephone}</p>
+                  <p className="break-words text-sm text-muted-foreground">{cmd.telephone}</p>
                   <p className="text-xs text-muted-foreground">{new Date(cmd.created_at).toLocaleString("fr-FR")}</p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <p className="text-lg font-bold text-primary">{cmd.total.toLocaleString()} FCFA</p>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between lg:justify-end">
+                  <p className="whitespace-nowrap text-lg font-bold text-primary">{cmd.total.toLocaleString()} FCFA</p>
                   <Select value={cmd.statut} onValueChange={(val) => handleStatutChange(cmd.id, val)}>
-                    <SelectTrigger className="w-40">
+                    <SelectTrigger className="w-full sm:w-40">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -67,7 +67,7 @@ const AdminCommandes = () => {
                   </Select>
                 </div>
               </div>
-              <div className="text-sm text-muted-foreground space-y-1">
+              <div className="space-y-1 break-words text-sm text-muted-foreground">
                 <p><strong>Adresse :</strong> {cmd.adresse}{cmd.quartier ? `, ${cmd.quartier}` : ""}</p>
                 <p><strong>Paiement :</strong> {modePaiementLabels[cmd.mode_paiement] || cmd.mode_paiement}</p>
                 {cmd.notes && <p><strong>Notes :</strong> {cmd.notes}</p>}

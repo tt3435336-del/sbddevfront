@@ -29,7 +29,7 @@ const AdminPersonnalisations = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-card-foreground mb-6">Demandes de personnalisation ({demandes?.length || 0})</h1>
+      <h1 className="mb-4 break-words text-xl font-bold text-card-foreground sm:mb-6 sm:text-2xl">Demandes de personnalisation ({demandes?.length || 0})</h1>
 
       {!demandes?.length ? (
         <div className="bg-card border border-border rounded-xl p-8 text-center text-muted-foreground">
@@ -38,15 +38,15 @@ const AdminPersonnalisations = () => {
       ) : (
         <div className="space-y-4">
           {demandes.map((d) => (
-            <div key={d.id} className="bg-card border border-border rounded-xl p-5">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
-                <div>
+            <div key={d.id} className="rounded-xl border border-border bg-card p-4 sm:p-5">
+              <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
                   <h3 className="font-bold text-card-foreground">{d.entreprise}</h3>
-                  <p className="text-sm text-muted-foreground">{d.telephone}</p>
+                  <p className="break-words text-sm text-muted-foreground">{d.telephone}</p>
                   <p className="text-xs text-muted-foreground">{new Date(d.created_at).toLocaleString("fr-FR")}</p>
                 </div>
                 <Select value={d.statut} onValueChange={(val) => handleStatutChange(d.id, val)}>
-                  <SelectTrigger className="w-36">
+                  <SelectTrigger className="w-full sm:w-36">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -56,7 +56,7 @@ const AdminPersonnalisations = () => {
                   </SelectContent>
                 </Select>
               </div>
-              {d.details && <p className="text-sm text-card-foreground mb-2">{d.details}</p>}
+              {d.details && <p className="mb-2 break-words text-sm text-card-foreground">{d.details}</p>}
               {d.logo_url && (
                 <div className="mt-2">
                   <img src={d.logo_url} alt="Logo" className="h-20 w-20 object-contain rounded border border-border" />

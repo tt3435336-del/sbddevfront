@@ -26,10 +26,10 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-card-foreground mb-6">Dashboard</h1>
+      <h1 className="mb-4 text-xl font-bold text-card-foreground sm:mb-6 sm:text-2xl">Dashboard</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <div className="bg-card border border-border rounded-xl p-6">
+      <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:mb-8 xl:grid-cols-3">
+        <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-primary/10 rounded-lg"><Package className="h-6 w-6 text-primary" /></div>
             <div>
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-orange-500/10 rounded-lg"><ClipboardList className="h-6 w-6 text-orange-500" /></div>
             <div>
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-blue-500/10 rounded-lg"><MessageSquare className="h-6 w-6 text-blue-500" /></div>
             <div>
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-purple-500/10 rounded-lg"><Palette className="h-6 w-6 text-purple-500" /></div>
             <div>
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-accent/10 rounded-lg"><TrendingUp className="h-6 w-6 text-accent" /></div>
             <div>
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-green-500/10 rounded-lg"><ShoppingCart className="h-6 w-6 text-green-500" /></div>
             <div>
@@ -87,16 +87,16 @@ const AdminDashboard = () => {
 
       {/* Dernières commandes */}
       {commandes && commandes.length > 0 && (
-        <div className="bg-card border border-border rounded-xl p-6 mb-6">
+        <div className="mb-6 rounded-xl border border-border bg-card p-4 sm:p-6">
           <h2 className="text-lg font-bold text-card-foreground mb-4">Dernières commandes</h2>
           <div className="space-y-3">
             {commandes.slice(0, 5).map((cmd) => (
-              <div key={cmd.id} className="flex items-center justify-between border-b border-border pb-2 last:border-0">
-                <div>
+              <div key={cmd.id} className="flex flex-col gap-2 border-b border-border pb-3 last:border-0 sm:flex-row sm:items-center sm:justify-between sm:pb-2">
+                <div className="min-w-0">
                   <p className="text-sm font-medium text-card-foreground">{cmd.nom_complet}</p>
-                  <p className="text-xs text-muted-foreground">{cmd.telephone} — {new Date(cmd.created_at).toLocaleDateString("fr-FR")}</p>
+                  <p className="break-words text-xs text-muted-foreground">{cmd.telephone} — {new Date(cmd.created_at).toLocaleDateString("fr-FR")}</p>
                 </div>
-                <div className="text-right">
+                <div className="flex items-center justify-between gap-3 sm:block sm:text-right">
                   <p className="text-sm font-bold text-primary">{cmd.total.toLocaleString()} FCFA</p>
                   <span className={`text-xs px-2 py-0.5 rounded-full ${
                     cmd.statut === "en_attente" ? "bg-orange-100 text-orange-700" :
@@ -114,12 +114,12 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      <div className="bg-card border border-border rounded-xl p-6">
+      <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
         <h2 className="text-lg font-bold text-card-foreground mb-4">Par catégorie</h2>
         <div className="space-y-3">
           {Object.entries(categories).map(([cat, count]) => (
-            <div key={cat} className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{cat}</span>
+            <div key={cat} className="flex items-start justify-between gap-4">
+              <span className="min-w-0 break-words text-sm text-muted-foreground">{cat}</span>
               <span className="text-sm font-bold text-card-foreground">{count}</span>
             </div>
           ))}

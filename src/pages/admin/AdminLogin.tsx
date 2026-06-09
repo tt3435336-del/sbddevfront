@@ -26,32 +26,32 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-secondary flex items-center justify-center px-4">
-      <div className="w-full max-w-sm">
-        <div className="flex items-center justify-center gap-2 mb-8">
+    <div className="flex min-h-svh w-full items-center justify-center overflow-x-hidden bg-secondary px-3 py-6 sm:px-4">
+      <div className="min-w-0 w-full max-w-sm">
+        <div className="mb-6 flex items-center justify-center gap-2 sm:mb-8">
           <HardHat className="h-10 w-10 text-primary" />
           <span className="text-2xl font-bold text-secondary-foreground">
             T.B.<span className="text-primary">C</span>
           </span>
         </div>
 
-        <div className="bg-card border border-border rounded-xl p-6 shadow-xl">
-          <h1 className="text-xl font-bold text-center mb-6 text-card-foreground">Espace Admin</h1>
+        <div className="w-full min-w-0 rounded-xl border border-border bg-card p-4 shadow-xl sm:p-6">
+          <h1 className="mb-6 text-center text-xl font-bold text-card-foreground">Espace Admin</h1>
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="min-w-0 space-y-4">
             <Input
               placeholder="Email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-muted"
+              className="w-full min-w-0 bg-muted"
             />
             <Input
               placeholder="Mot de passe"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-muted"
+              className="w-full min-w-0 bg-muted"
             />
             <Button type="submit" disabled={loading} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Se connecter"}

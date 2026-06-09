@@ -37,9 +37,9 @@ const AdminMessages = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-card-foreground mb-6">
-        Messages ({contacts?.length || 0})
-        {nonLus > 0 && <span className="ml-2 text-sm bg-primary text-primary-foreground px-2 py-0.5 rounded-full">{nonLus} non lu{nonLus > 1 ? "s" : ""}</span>}
+      <h1 className="mb-4 flex flex-wrap items-center gap-2 text-xl font-bold text-card-foreground sm:mb-6 sm:text-2xl">
+        <span>Messages ({contacts?.length || 0})</span>
+        {nonLus > 0 && <span className="rounded-full bg-primary px-2 py-0.5 text-sm text-primary-foreground">{nonLus} non lu{nonLus > 1 ? "s" : ""}</span>}
       </h1>
 
       {!contacts?.length ? (
@@ -49,19 +49,19 @@ const AdminMessages = () => {
       ) : (
         <div className="space-y-4">
           {contacts.map((c) => (
-            <div key={c.id} className={`bg-card border rounded-xl p-5 ${!c.lu ? "border-primary" : "border-border"}`}>
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
+            <div key={c.id} className={`rounded-xl border bg-card p-4 sm:p-5 ${!c.lu ? "border-primary" : "border-border"}`}>
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+                <div className="min-w-0 flex-1">
+                  <div className="mb-1 flex flex-wrap items-center gap-2">
                     {c.lu ? <MailOpen className="h-4 w-4 text-muted-foreground" /> : <Mail className="h-4 w-4 text-primary" />}
                     <h3 className="font-bold text-card-foreground">{c.nom}</h3>
                     {!c.lu && <span className="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">Nouveau</span>}
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2">{c.email}</p>
-                  <p className="text-sm text-card-foreground whitespace-pre-wrap">{c.message}</p>
+                  <p className="mb-2 break-all text-sm text-muted-foreground">{c.email}</p>
+                  <p className="whitespace-pre-wrap break-words text-sm text-card-foreground">{c.message}</p>
                   <p className="text-xs text-muted-foreground mt-2">{new Date(c.created_at).toLocaleString("fr-FR")}</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   {!c.lu && (
                     <Button size="sm" variant="outline" onClick={() => handleMarquerLu(c.id)}>
                       Marquer lu

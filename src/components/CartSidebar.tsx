@@ -10,7 +10,7 @@ const CartSidebar = () => {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent className="flex w-full flex-col sm:max-w-md">
+      <SheetContent className="flex w-full flex-col p-4 sm:p-6">
         <SheetHeader>
           <SheetTitle className="text-lg font-bold">Panier ({itemCount})</SheetTitle>
         </SheetHeader>

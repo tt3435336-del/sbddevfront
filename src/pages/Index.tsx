@@ -45,7 +45,7 @@ const Index = () => {
       <section ref={productsRef} id="produits" className="scroll-mt-24 bg-muted/30 py-6 scroll-fade-in sm:py-8">
         <div className="mx-auto w-full max-w-[1880px] px-4 sm:px-6 lg:px-8 xl:px-10">
           {isLoading ? (
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start xl:gap-6">
+            <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start sm:gap-5 xl:gap-6">
               {Array.from({ length: 8 }, (_, i) => (
                 <div key={i} className="h-64 rounded-xl bg-card animate-pulse" />
               ))}
@@ -58,7 +58,7 @@ const Index = () => {
                 </div>
               ) : (
                 <>
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start xl:gap-6">
+                  <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start sm:gap-5 xl:gap-6">
                     {visibleProducts.map((p) => (
                       <ProductCard key={p.id} produit={p} />
                     ))}

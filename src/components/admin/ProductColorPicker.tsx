@@ -31,7 +31,7 @@ const ProductColorPicker = ({ value, onChange, label = "Couleur(s) disponible(s)
   return (
     <div>
       <label className="block text-sm font-medium text-card-foreground mb-2">{label}</label>
-      <div className="grid gap-4 rounded-xl border border-border bg-muted/40 p-4 sm:grid-cols-[180px_1fr]">
+      <div className="grid gap-4 rounded-xl border border-border bg-muted/40 p-3 sm:grid-cols-[180px_1fr] sm:p-4">
         <div className="space-y-3">
           <label className="relative block h-44 cursor-pointer overflow-hidden rounded-xl border border-border bg-card shadow-inner">
             <span
@@ -74,7 +74,7 @@ const ProductColorPicker = ({ value, onChange, label = "Couleur(s) disponible(s)
         </div>
 
         <div>
-          <div className="grid grid-cols-5 gap-2 sm:grid-cols-6">
+          <div className="grid grid-cols-4 gap-2 min-[400px]:grid-cols-5 sm:grid-cols-6">
             {PRODUCT_COLOR_OPTIONS.map((color) => {
               const selected = value.includes(color.label);
 

@@ -12,7 +12,7 @@ const AdminGuestRoute = ({ children }: AdminGuestRouteProps) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-secondary flex items-center justify-center">
+      <div className="flex min-h-svh items-center justify-center bg-secondary">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
       </div>
     );

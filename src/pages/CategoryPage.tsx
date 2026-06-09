@@ -10,7 +10,7 @@ const categorieMap: Record<string, string> = {
   matelas: "Matelas gonflables",
 };
 const PRODUCTS_PER_PAGE = 12;
-const productsGridClass = "grid grid-cols-1 gap-5 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start";
+const productsGridClass = "grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start sm:gap-5";
 
 const CategoryPage = ({ slug }: { slug: string }) => {
   const categorie = categorieMap[slug] || slug;

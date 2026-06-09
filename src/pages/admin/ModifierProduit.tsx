@@ -95,10 +95,10 @@ const ModifierProduit = () => {
   }
 
   return (
-    <div className="max-w-2xl">
-      <h1 className="text-2xl font-bold text-card-foreground mb-6">Modifier le produit</h1>
+    <div className="mx-auto w-full max-w-2xl">
+      <h1 className="mb-4 text-xl font-bold text-card-foreground sm:mb-6 sm:text-2xl">Modifier le produit</h1>
 
-      <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-6 space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-card p-4 sm:p-6">
         <ProductPhotoPicker photos={photos} onChange={setPhotos} onUploadingChange={setUploadingPhotos} />
 
         <div>

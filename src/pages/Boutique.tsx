@@ -10,7 +10,7 @@ import { PRODUCT_CATEGORIES } from "@/lib/productOptions";
 
 const categoriesList = ["Toutes", ...PRODUCT_CATEGORIES];
 const PRODUCTS_PER_PAGE = 12;
-const productsGridClass = "grid grid-cols-1 gap-5 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start";
+const productsGridClass = "grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start sm:gap-5";
 
 const Boutique = () => {
   const [searchParams] = useSearchParams();

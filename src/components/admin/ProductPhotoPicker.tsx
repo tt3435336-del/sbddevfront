@@ -97,11 +97,11 @@ const ProductPhotoPicker = ({
   return (
     <div>
       <label className="block text-sm font-medium text-card-foreground mb-2">{label}</label>
-      <label className="flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border-2 border-dashed border-border p-4 transition-colors hover:border-primary">
+      <label className="flex min-h-14 cursor-pointer items-center gap-3 rounded-lg border-2 border-dashed border-border p-3 transition-colors hover:border-primary sm:p-4">
         {uploading
           ? <Loader2 className="h-6 w-6 shrink-0 animate-spin text-primary" />
           : <ImagePlus className="h-6 w-6 shrink-0 text-muted-foreground" />}
-        <span className="text-sm text-muted-foreground">
+        <span className="min-w-0 break-words text-sm text-muted-foreground">
           {uploading
             ? "Envoi des photos vers Cloudinary..."
             : photos.length > 0 ? "Ajouter d'autres photos" : "Choisir une ou plusieurs photos"}

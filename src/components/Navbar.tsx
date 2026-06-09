@@ -51,12 +51,12 @@ const Navbar = () => {
             </div>
           </form>
 
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+          <div className="hidden xl:flex items-center gap-1 2xl:gap-2">
             {navigationItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
-                className="rounded-full border border-transparent px-4 py-2.5 text-base font-semibold tracking-[0.01em] text-white transition-colors hover:border-white/15 hover:bg-white/10 hover:text-primary xl:px-5 xl:text-lg"
+                className="rounded-full border border-transparent px-3 py-2.5 text-sm font-semibold tracking-[0.01em] text-white transition-colors hover:border-white/15 hover:bg-white/10 hover:text-primary 2xl:px-4 2xl:text-base"
                 activeClassName="border-primary/40 bg-primary/15 text-primary"
               >
                 {item.label}
@@ -86,7 +86,7 @@ const Navbar = () => {
               )}
             </button>
             <button
-              className="rounded-full p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
+              className="rounded-full p-2 text-white transition-colors hover:bg-white/10 xl:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
@@ -96,7 +96,7 @@ const Navbar = () => {
         </div>
 
         {menuOpen && (
-          <div className="border-t border-white/10 py-4 lg:hidden">
+          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-white/10 py-4 xl:hidden">
             <form onSubmit={handleSearch} className="flex">
               <Input
                 placeholder="Rechercher..."

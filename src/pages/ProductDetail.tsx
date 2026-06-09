@@ -155,7 +155,7 @@ const ProductDetail = () => {
       {similar.length > 0 && (
         <section>
           <h2 className="text-2xl font-bold mb-6">Produits <span className="text-primary">similaires</span></h2>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start">
+          <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(220px,260px))] sm:justify-start sm:gap-5">
             {similar.map((p) => <ProductCard key={p.id} produit={p} />)}
           </div>
         </section>

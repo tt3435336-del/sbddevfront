@@ -70,8 +70,8 @@ const ProductCard = ({ produit }: { produit: Produit }) => {
           {produit.nom}
         </h3>
         <p className="mb-3 text-xs text-muted-foreground">{produit.categorie}</p>
-        <div className="mt-auto flex items-center justify-between gap-3">
-          <span className="text-base font-bold text-primary">
+        <div className="mt-auto flex items-center justify-between gap-2">
+          <span className="min-w-0 text-sm font-bold leading-tight text-primary sm:text-base">
             {produit.prix ? `${produit.prix.toLocaleString()} FCFA` : "Prix sur demande"}
           </span>
           <Button

@@ -74,7 +74,7 @@ const CatalogPagination = ({
 
   return (
     <Pagination className={cn("pt-4", className)}>
-      <PaginationContent className="flex-wrap justify-center gap-2">
+      <PaginationContent className="max-w-full flex-wrap justify-center gap-1.5 sm:gap-2">
         <PaginationItem>
           <PaginationPrevious
             href="#"
@@ -85,7 +85,7 @@ const CatalogPagination = ({
               }
             }}
             className={cn(
-              "rounded-full border border-border bg-card px-4 text-sm",
+              "h-9 rounded-full border border-border bg-card px-3 text-xs sm:h-10 sm:px-4 sm:text-sm",
               !canGoToPrevious && "pointer-events-none opacity-40",
             )}
           />
@@ -102,14 +102,14 @@ const CatalogPagination = ({
                   handlePageChange(page);
                 }}
                 className={cn(
-                  "h-10 min-w-10 rounded-full border border-border bg-card px-3 text-sm",
+                  "h-9 min-w-9 rounded-full border border-border bg-card px-2.5 text-xs sm:h-10 sm:min-w-10 sm:px-3 sm:text-sm",
                   page === currentPage && "border-primary bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground",
                 )}
               >
                 {page}
               </PaginationLink>
             ) : (
-              <PaginationEllipsis className="h-10 w-10 rounded-full border border-transparent" />
+              <PaginationEllipsis className="h-9 w-9 rounded-full border border-transparent sm:h-10 sm:w-10" />
             )}
           </PaginationItem>
         ))}
@@ -124,7 +124,7 @@ const CatalogPagination = ({
               }
             }}
             className={cn(
-              "rounded-full border border-border bg-card px-4 text-sm",
+              "h-9 rounded-full border border-border bg-card px-3 text-xs sm:h-10 sm:px-4 sm:text-sm",
               !canGoToNext && "pointer-events-none opacity-40",
             )}
           />
